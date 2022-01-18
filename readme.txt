@@ -44,4 +44,23 @@ Deploying to ganach:
 https://youtu.be/M576WGiDBdQ?t=19259
 https://youtu.be/M576WGiDBdQ?t=19912
 
+Deploying to persistant ganach:
+https://youtu.be/M576WGiDBdQ?t=20204
 
+Adding a network to brownie:
+https://youtu.be/M576WGiDBdQ?t=20271
+
+(.venv) (base) raoyangdeMacBook-Pro:brownie_fund_me lightrao$ brownie networks add Ethereum ganache-local host=http://127.0.0.1:8545 chainid=1337
+Brownie v1.17.2 - Python development framework for Ethereum
+
+SUCCESS: A new network 'ganache-local' has been added
+  └─ganache-local
+    ├─id: ganache-local
+    ├─chainid: 1337
+    └─host: http://127.0.0.1:8545
+(.venv) (base) raoyangdeMacBook-Pro:brownie_fund_me lightrao$ 
+
+(.venv) (base) raoyangdeMacBook-Pro:brownie_fund_me lightrao$ brownie run scripts/deploy.py --network ganache-local
+
+Withdraw and Fund:
+https://youtu.be/M576WGiDBdQ?t=20563
