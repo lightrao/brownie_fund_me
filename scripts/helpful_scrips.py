@@ -2,6 +2,7 @@ from brownie import accounts, network, config, MockV3Aggregator
 from web3 import Web3
 
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
+# getPrice() function in FundMe.sol has "return uint256(answer * 10 ** 10);"
 DECIMALS = 8
 STARTING_PRICE = 2000 * 10 ** 8
 
