@@ -73,3 +73,23 @@ https://youtu.be/M576WGiDBdQ?t=21237
 
 mainnet-fork:
 https://youtu.be/M576WGiDBdQ?t=21287
+mainnet-fork is a build in part of brownie
+
+Custom mainnet fork:
+https://youtu.be/M576WGiDBdQ?t=21544
+Adding a development brownie network through Infura:
+brownie networks add development mainnet-fork-dev cmd=ganache-cli host=http://127.0.0.1 fork='https://infura.io/v3/$WEB3_INFURA_PROJECT_ID' accounts=10 mnemonic=brownie port=8545 
+Adding a development brownie network through Alchemy:
+brownie networks add development mainnet-fork-dev cmd=ganache-cli host=http://127.0.0.1 fork=https://eth-mainnet.alchemyapi.io/v2/GKV9wo2cZv0lMolXLQB8IQT3p0It6Xne accounts=10 mnemonic=brownie port=8545
+SUCCESS: A new network 'mainnet-fork-dev' has been added
+  └─mainnet-fork-dev
+    ├─id: mainnet-fork-dev
+    ├─cmd: ganache-cli
+    ├─cmd_settings: {'fork': 'https://eth-mainnet.alchemyapi.io/v2/GKV9wo2cZv0lMolXLQB8IQT3p0It6Xne', 'accounts': 10, 'mnemonic': 'brownie', 'port': 8545}
+    └─host: http://127.0.0.1
+
+(.venv) (base) raoyangdeMacBook-Pro:brownie_fund_me lightrao$ brownie run scripts/deploy.py --network mainnet-fork-dev
+(.venv) (base) raoyangdeMacBook-Pro:brownie_fund_me lightrao$ brownie test --network mainnet-fork-dev
+
+Adding to github:
+https://youtu.be/M576WGiDBdQ?t=21797

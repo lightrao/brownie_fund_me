@@ -1,6 +1,7 @@
 from brownie import accounts, network, config, MockV3Aggregator
 from web3 import Web3
 
+FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
 # getPrice() function in FundMe.sol has "return uint256(answer * 10 ** 10);"
 DECIMALS = 8
@@ -8,10 +9,14 @@ STARTING_PRICE = 2000 * 10 ** 8
 
 
 def get_account():
-    print("Geting account...")
-    if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
+    if (
+        network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS
+        or network.show_active() in FORKED_LOCAL_ENVIRONMENTS
+    ):
+        print("Get brownie's simulate account :)")
         return accounts[0]
     else:
+        print("Get MetaMask wallet account :)")
         return accounts.add(config["wallets"]["from_key"])
 
 
